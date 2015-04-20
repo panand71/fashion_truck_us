@@ -43,14 +43,13 @@ gem 'autoprefixer-rails'
 gem 'pg'
 # Use SCSS for stylesheets
 
-gem 'puma'
-gem 'heroku-forward'
+
 
 gem 'rack-utf8_sanitizer'
 
 group :production do 
   gem 'rails_12factor'
-  gem "unicorn"
+  gem 'puma'
          
 end
 
