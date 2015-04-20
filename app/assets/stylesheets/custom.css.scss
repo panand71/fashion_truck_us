@@ -56,7 +56,7 @@ textarea {
 }
 
 .navbar-inverse .navbar-nav > li > a {
-  color: #F52887;
+  color: #C6E2FF;
 }
 /* table */
 
@@ -67,9 +67,13 @@ table{
 
 /* typography */
 
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1;
+h1 {
   color: #F52887;
+}
+
+h2, h3, h4, h5, h6 {
+  line-height: 1;
+  color: #120A8F;
   font-family: 'Istok Web', sans-serif;
 }
 
@@ -97,6 +101,19 @@ h2 {
 
 }
 
+.btn {
+    padding: 14px 24px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: #F52887;
+}
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+}
+
+
 p {
   font-size: 1.1em;
   line-height: 1.7em;
@@ -109,7 +126,7 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 3em;
-  color: #F52887;
+  color: #C6E2FF;
   letter-spacing: -1px;
   padding-top: 15px;
   font-weight: bold;
