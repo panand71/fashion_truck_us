@@ -10,6 +10,7 @@ class OwnersController < ApplicationController
   # GET /owners/1
   # GET /owners/1.json
   def show
+    @owner = Owner.find(params[:id])
   end
 
   # GET /owners/new
@@ -69,6 +70,8 @@ class OwnersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def owner_params
-      params.require(:owner).permit(:name, :email, :username, :string, :phone)
+      params.require(:owner).permit(:name, :email, :phone, :username, :password_digest)
     end
+
+    
 end

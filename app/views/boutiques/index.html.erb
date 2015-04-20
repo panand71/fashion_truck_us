@@ -1,49 +1,60 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Listing Boutiques</h1>
+<h1>Fashion Truck US Mobile Boutique Listing</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Owner</th>
-      <th>Website</th>
-      <th>Twitter</th>
-      <th>Facebook</th>
-      <th>Instagram</th>
-      <th>Email</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Schedule</th>
-      <th>Description</th>
-      <th>Category</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<% form_tag boutiques_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
 
-  <tbody>
-    <% @boutiques.each do |boutique| %>
-      <tr>
-        <td><%= boutique.name %></td>
-        <td><%= boutique.owner_id %></td>
-        <td><%= boutique.website %></td>
-        <td><%= boutique.twitter %></td>
-        <td><%= boutique.facebook %></td>
-        <td><%= boutique.instagram %></td>
-        <td><%= boutique.email %></td>
-        <td><%= boutique.city %></td>
-        <td><%= boutique.state %></td>
-        <td><%= boutique.schedule %></td>
-        <td><%= boutique.description %></td>
-        <td><%= boutique.category %></td>
-        <td><%= link_to 'Show', boutique %></td>
-        <td><%= link_to 'Edit', edit_boutique_path(boutique) %></td>
-        <td><%= link_to 'Destroy', boutique, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="media">
+  <div class="media-body">
+    <table class="table table-hover">
+      <thead>
+        <div class="row"><tr>
+         <div class="col-sm-2" style="background-color:lavender;"><th>Name</th></div>  
+         <div class="col-sm-8" style="background-color:lavenderblush;"><th>Website</th></div>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @boutiques.each do |boutique| %>
+        <tr class="row-links">
+          <td><%= link_to boutique.name, boutique %></td>
+          <td><%= boutique.website %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+// $('.row-links').on('click', 'td:not(.special-td)', function(){
+
+
+//     //get the link from data attribute
+//     var the_link = $(this).parent().attr("data-link");
+
+//     //do we have a valid link      
+//     if (the_link == '' || typeof the_link === 'undefined') {
+//         //do nothing for now
+//     }
+//     else {
+//         //open the page
+//         window.location = the_link;
+//     }
+// });
+// </script>
 
 <br>
 
-<%= link_to 'New Boutique', new_boutique_path %>
+<!-- <h3>Import Boutiques</h3>
+<%= form_tag import_boutiques_path, multipart: true do%>
+  <%= file_field_tag :file%>
+  <%= submit_tag "Upload" %>
+<% end %>
+<%= link_to 'New Boutique', new_boutique_path %> -->
+
+

@@ -1,11 +1,24 @@
 class BoutiquesController < ApplicationController
   before_action :set_boutique, only: [:show, :edit, :update, :destroy]
-
+  helper_method :sort_column, :sort_direction
+  
+  
+  
+  
   # GET /boutiques
   # GET /boutiques.json
+  # def index
+  #   @boutiques = Boutique.order(sort_column + " " +sort_direction)
+  # end
+
   def index
-    @boutiques = Boutique.all
+    if params[:search]
+      @boutiques = Boutique.search(params[:search]).order(sort_column + " " +sort_direction)
+    else
+      @boutiques = Boutique.order(sort_column + " " +sort_direction)
+    end
   end
+
 
   # GET /boutiques/1
   # GET /boutiques/1.json
@@ -18,7 +31,8 @@ class BoutiquesController < ApplicationController
   end
 
   # GET /boutiques/1/edit
-  def edit
+ def edit
+    @boutique = Boutique.find(params[:id])
   end
 
   # POST /boutiques
@@ -61,8 +75,20 @@ class BoutiquesController < ApplicationController
     end
   end
 
+
+  def import
+    Boutique.import(params[:file])
+    redirect_to boutiques_path, notice: "Boutiques uploaded"
+  end
+
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
+    def user_params
+      params.require(:boutique).permit(:name, :email)
+    end
+
     def set_boutique
       @boutique = Boutique.find(params[:id])
     end
@@ -71,4 +97,13 @@ class BoutiquesController < ApplicationController
     def boutique_params
       params.require(:boutique).permit(:name, :owner_id, :website, :twitter, :facebook, :instagram, :email, :city, :state, :schedule, :description, :category)
     end
-end
+
+    def sort_column
+      Boutique.column_names.include?(params[:sort]) ? params[:sort] : "name"
+    end
+
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+    end
+
+  end

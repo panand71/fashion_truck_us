@@ -1,64 +1,107 @@
 <p id="notice"><%= notice %></p>
+<% provide(:title, @boutique.name) %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @boutique.name %>
-</p>
+    <div class="container"> 
+    <div class="col-md-8">                                   
+      <table class="table">
+        <thead>
+          <tr>
+            <th id="gravatar_image"><%= gravatar_for @boutique %></th>
+            <th><%= @boutique.name %> Profile</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Name</strong></td>
+            <td><%= @boutique.name %></td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td><%= @boutique.email %></td>
+          </tr>
+          <tr>
+            <td>Owner</td>
+            <td><%= @boutique.owner_id %></td>
+          </tr>
+          <tr>
+            <td>Website</td>
+            <td><a href = "<%= @boutique.website %>" target="_blank"></td>
+          </tr>
+          <tr>
+            <td>Location</td>
+            <td><%= @boutique.city %>, <%= @boutique.state %></td>
+          </tr> 
+          <tr>
+            <td>Schedule</td>
+            <td><%= @boutique.schedule %> </td>
+          </tr> 
+          <tr>
+            <td>Category</td>
+            <td><%= @boutique.category %></td>
+          </tr> 
+          <tr>
+            <td>Description</td>
+            <td><%= @boutique.description %></td>
+          </tr>                   
 
-<p>
-  <strong>Owner:</strong>
-  <%= @boutique.owner_id %>
-</p>
+          
+                      
 
-<p>
-  <strong>Website:</strong>
-  <%= @boutique.website %>
-</p>
 
-<p>
-  <strong>Twitter:</strong>
-  <%= @boutique.twitter %>
-</p>
+        </tbody>
+      </table>
+    </div>
+        <div class="col-md-4"> 
+      <br/>
+            <br/>
+                  <br/>
+                        <br/>
+                              <br/>
+                                    <br/>                                    
+                                          <br/>      <br/>      <br/>
+                                          <br/>      <br/>      <br/> <br/> <br/>                                         
+      <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Schedule</td>
+            <td><%= @boutique.schedule %> </td>
+          </tr> 
+          <tr>
+            <td>Category</td>
+            <td><%= @boutique.category %></td>
+          </tr> 
+          <tr>
+            <td>Description</td>
+            <td><%= @boutique.description %></td>
+          </tr>                   
+            <td><a href = "<%= @boutique.twitter %>" target="_blank"> Check out our Twitter page!</a>
+            </td>        
+          <tr>
+            <td><a href = "<%= @boutique.facebook %>" target="_blank"> Check out our Facebook page!</a>
+            </td>
+          </tr>                  
+          <tr>
+            <td><a href = "<%= @boutique.instagram %>" target="_blank"> Check out our Instagram page!</a>
+            </td>    
+          </tr>
+          
+                      
 
-<p>
-  <strong>Facebook:</strong>
-  <%= @boutique.facebook %>
-</p>
 
-<p>
-  <strong>Instagram:</strong>
-  <%= @boutique.instagram %>
-</p>
+        </tbody>
+      </table>
+    </div>
+    </div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @boutique.email %>
-</p>
 
-<p>
-  <strong>City:</strong>
-  <%= @boutique.city %>
-</p>
 
-<p>
-  <strong>State:</strong>
-  <%= @boutique.state %>
-</p>
-
-<p>
-  <strong>Schedule:</strong>
-  <%= @boutique.schedule %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @boutique.description %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @boutique.category %>
-</p>
 
 <%= link_to 'Edit', edit_boutique_path(@boutique) %> |
 <%= link_to 'Back', boutiques_path %>
+

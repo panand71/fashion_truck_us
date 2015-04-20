@@ -69,6 +69,6 @@ class BuildTrucksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def build_truck_params
-      params.require(:build_truck).permit(:project_name, :owner_id, :size, :flooring, :walls, :lighting, :configuration, :shelves, :rods, :outside_color)
+      params.require(:build_truck).permit(:name, :size, :flooring, :walls, :lighting, :configuration, :shelves, :hanging_space, :outside_color)
     end
 end
