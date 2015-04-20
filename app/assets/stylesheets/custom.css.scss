@@ -234,7 +234,8 @@ label{
 }
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
-  width: 100%;
+  width: 40%;
+  height: 20px;
   margin-bottom: 15px;
   @include box_sizing;
 }

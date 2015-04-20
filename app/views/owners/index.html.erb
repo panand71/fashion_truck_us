@@ -1,35 +1,35 @@
-<p id="notice"><%= notice %></p>
-
-<h1>This is a Directory of Fashion Truck Owners</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Username</th>
-      <th>String</th>
-      <th>Phone</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<h1>Mobile Boutique Owners</h1>
+<div class="media">
+  <div class="media-body">
+    <table class="table table-hover">
+      <thead>
+        <div class="row"><tr>
+         <div class="col-sm-3" style="background-color:lavender;"><th>Name</th></div>  
+         <div class="col-sm-3" style="background-color:lavenderblush;"><th>Email</th></div>
+         <div class="col-sm-3" style="background-color:lavenderblush;"><th>Phone</th></div>
+        </tr>
+      </thead>
 
   <tbody>
     <% @owners.each do |owner| %>
       <tr>
         <td><%= owner.name %></td>
         <td><%= owner.email %></td>
-        <td><%= owner.username %></td>
-        <td><%= owner.string %></td>
         <td><%= owner.phone %></td>
         <td><%= link_to 'Show', owner %></td>
         <td><%= link_to 'Edit', edit_owner_path(owner) %></td>
         <td><%= link_to 'Destroy', owner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
   </tbody>
 </table>
 
 <br>
-
 <%= link_to 'New Owner', new_owner_path %>
