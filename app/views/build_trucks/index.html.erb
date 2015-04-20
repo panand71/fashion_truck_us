@@ -1,25 +1,48 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Build Trucks</h1>
+<h1>Truck Build Requests</h1>
+<div class="media">
+  <div class="media-body">
+    <table class="table table-hover">
+      <thead>
+        <div class="row"><tr>
+         <div class="col-xs-1" style="background-color:lavender;"><th>Project</th></div>  
+         <div class="col-xs-1" style="background-color:lavender;"><th>Owner</th></div>  
+         <div class="col-xs-1" style="background-color:lavender;"><th>Size</th></div>  
+         <div class="col-xs-1" style="background-color:lavender;"><th>Flooring</th></div>  
+         <div class="col-xs-1" style="background-color:lavender;"><th>Walls</th></div>  
+         <div class="col-xs-1" style="background-color:lavender;"><th>Lighting</th></div> 
+         <div class="col-xs-1" style="background-color:lavender;"><th>Config</th></div> 
+         <div class="col-xs-1" style="background-color:lavender;"><th>Shelves</th></div>  
+         <div class="col-xs-1" style="background-color:lavender;"><th>Rods</th></div>  
+         <div class="col-xs-1" style="background-color:lavender;"><th>Outside Color</th></div>                               
+        </tr>
+      </thead>
+      <tbody>
+        <% @build_trucks.each do |build_truck| %>
+        <tr class="row-links">
+        <td><%= build_truck.project_name %></td>
+        <td><%= build_truck.owner_id %></td>
+        <td><%= build_truck.size %></td>
+        <td><%= build_truck.flooring %></td>
+        <td><%= build_truck.walls %></td>
+        <td><%= build_truck.lighting %></td>
+        <td><%= build_truck.configuration %></td>
+        <td><%= build_truck.shelves %></td>
+        <td><%= build_truck.rods %></td>
+        <td><%= build_truck.outside_color %></td>
+        <td><%= link_to 'Show', build_truck %></td>
+        <td><%= link_to 'Edit', edit_build_truck_path(build_truck) %></td>
+        <td><%= link_to 'Destroy', build_truck, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Project name</th>
-      <th>Owner</th>
-      <th>Size</th>
-      <th>Flooring</th>
-      <th>Walls</th>
-      <th>Lighting</th>
-      <th>Configuration</th>
-      <th>Shelves</th>
-      <th>Rods</th>
-      <th>Outside color</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
+  <!-- <tbody>
     <% @build_trucks.each do |build_truck| %>
       <tr>
         <td><%= build_truck.project_name %></td>
@@ -40,6 +63,6 @@
   </tbody>
 </table>
 
-<br>
+<br> -->
 
 <%= link_to 'New Build truck', new_build_truck_path %>

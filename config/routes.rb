@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :build_trucks
+
   get 'sessions/new'
 
   get 'static_pages/home'
@@ -23,6 +23,9 @@ Rails.application.routes.draw do
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
+  
+
+  resources :build_trucks
   
   resources :users
 

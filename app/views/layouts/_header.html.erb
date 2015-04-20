@@ -1,10 +1,11 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
+<nav class="navbar navbar-fixed-top navbar-inverse" role="investigation">
+  <div class="nav-header">
+
     <%= link_to "Fashion Truck US", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home",    root_path %></li>
-        <li><%= link_to "Help",    help_path %></li>
+        <li><a href="/build_trucks/new" class="btn">Buy a Fashion Truck</a></li>
+        <li></li>
         <li><%= link_to "Sign Up",    signup_path %></li>
         <% if logged_in? %>
           <li><%= link_to "Owners", '#' %></li>
@@ -25,13 +26,26 @@
           <li><%= link_to "Log in", login_path %></li>
         <% end %>
       </ul>
-      <ul class="navbar-center">
-        <li><%= link_to "Build", new_build_truck_path%> class="navbar-btn">
-                    <a href="#" class="btn">Build a Fashion Truck</a>
-        </li>
-
-      </ul>
-    </nav>
   </div>
-</header>
+</nav>
 
+<!-- <nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>    
+  </div>
+  <a class="navbar-brand" href="#">Brand</a>
+  <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-left">
+        <li><a href="#">Left</a></li>
+        <li><a href="#about">Left</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#about">Right</a></li>
+      <li><a href="#contact">Right</a></li>
+    </ul>
+  </div>
+</nav> -->
