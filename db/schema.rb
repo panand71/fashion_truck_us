@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150420043024) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "boutiques", force: :cascade do |t|
     t.string   "name"
     t.integer  "owner_id"
