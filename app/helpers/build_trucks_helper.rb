@@ -1,0 +1,2 @@
+module BuildTrucksHelper
+end

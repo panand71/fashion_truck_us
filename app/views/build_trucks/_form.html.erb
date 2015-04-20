@@ -1,0 +1,57 @@
+<%= form_for(@build_truck) do |f| %>
+  <% if @build_truck.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@build_truck.errors.count, "error") %> prohibited this build_truck from being saved:</h2>
+
+      <ul>
+      <% @build_truck.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :project_name %><br>
+    <%= f.text_field :project_name %>
+  </div>
+  <div class="field">
+    <%= f.label :owner_id %><br>
+    <%= f.number_field :owner_id %>
+  </div>
+  <div class="field">
+    <%= f.label :size %><br>
+    <%= f.text_field :size %>
+  </div>
+  <div class="field">
+    <%= f.label :flooring %><br>
+    <%= f.text_field :flooring %>
+  </div>
+  <div class="field">
+    <%= f.label :walls %><br>
+    <%= f.text_field :walls %>
+  </div>
+  <div class="field">
+    <%= f.label :lighting %><br>
+    <%= f.text_field :lighting %>
+  </div>
+  <div class="field">
+    <%= f.label :configuration %><br>
+    <%= f.text_field :configuration %>
+  </div>
+  <div class="field">
+    <%= f.label :shelves %><br>
+    <%= f.text_field :shelves %>
+  </div>
+  <div class="field">
+    <%= f.label :rods %><br>
+    <%= f.text_field :rods %>
+  </div>
+  <div class="field">
+    <%= f.label :outside_color %><br>
+    <%= f.text_field :outside_color %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

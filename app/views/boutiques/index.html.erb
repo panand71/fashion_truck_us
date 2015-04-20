@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Boutiques</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Owner</th>
+      <th>Website</th>
+      <th>Twitter</th>
+      <th>Facebook</th>
+      <th>Instagram</th>
+      <th>Email</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Schedule</th>
+      <th>Description</th>
+      <th>Category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @boutiques.each do |boutique| %>
+      <tr>
+        <td><%= boutique.name %></td>
+        <td><%= boutique.owner_id %></td>
+        <td><%= boutique.website %></td>
+        <td><%= boutique.twitter %></td>
+        <td><%= boutique.facebook %></td>
+        <td><%= boutique.instagram %></td>
+        <td><%= boutique.email %></td>
+        <td><%= boutique.city %></td>
+        <td><%= boutique.state %></td>
+        <td><%= boutique.schedule %></td>
+        <td><%= boutique.description %></td>
+        <td><%= boutique.category %></td>
+        <td><%= link_to 'Show', boutique %></td>
+        <td><%= link_to 'Edit', edit_boutique_path(boutique) %></td>
+        <td><%= link_to 'Destroy', boutique, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Boutique', new_boutique_path %>

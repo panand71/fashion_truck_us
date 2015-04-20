@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Project name:</strong>
+  <%= @build_truck.project_name %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @build_truck.owner_id %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @build_truck.size %>
+</p>
+
+<p>
+  <strong>Flooring:</strong>
+  <%= @build_truck.flooring %>
+</p>
+
+<p>
+  <strong>Walls:</strong>
+  <%= @build_truck.walls %>
+</p>
+
+<p>
+  <strong>Lighting:</strong>
+  <%= @build_truck.lighting %>
+</p>
+
+<p>
+  <strong>Configuration:</strong>
+  <%= @build_truck.configuration %>
+</p>
+
+<p>
+  <strong>Shelves:</strong>
+  <%= @build_truck.shelves %>
+</p>
+
+<p>
+  <strong>Rods:</strong>
+  <%= @build_truck.rods %>
+</p>
+
+<p>
+  <strong>Outside color:</strong>
+  <%= @build_truck.outside_color %>
+</p>
+
+<%= link_to 'Edit', edit_build_truck_path(@build_truck) %> |
+<%= link_to 'Back', build_trucks_path %>
