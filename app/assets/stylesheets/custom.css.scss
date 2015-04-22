@@ -13,7 +13,8 @@ $gray-medium-light: #eaeaea;
 
 .jumbotron {
 background-color: FFF7F;
-width: 90%;
+text-align: left;
+width: 100%;
 }
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -213,8 +214,8 @@ footer ul li {
 .gravatar {
   float: left;
   margin-right: 10px;
-  height: 240px;
-  width:  240px;
+  height: 450px;
+  width:  700px;
 }
 
 .gravatar_edit {
@@ -232,12 +233,21 @@ footer ul li {
   }
 }
 
+.col-md-8 {
+  float: right;
+}
+
+.profile_table {
+  float: right;
+}
 .field_with_errors {
   @extend .has-error;
   .form-control {
     color: $state-danger-text;
   }
 }
+
+
 
 label{
   font-size: 24px;

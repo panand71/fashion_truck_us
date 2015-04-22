@@ -24,6 +24,8 @@ class OwnersController < ApplicationController
 
   # POST /owners
   # POST /owners.json
+
+  
   def create
     @owner = Owner.new(owner_params)
 

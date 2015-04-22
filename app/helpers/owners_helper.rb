@@ -8,3 +8,4 @@ module OwnersHelper
     image_tag(gravatar_url, alt: owner.name, class: "gravatar")
   end
 end
+

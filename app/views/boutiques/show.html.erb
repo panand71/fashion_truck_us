@@ -2,20 +2,28 @@
 <% provide(:title, @boutique.name) %>
 
 <div class="center jumbotron">
-  <h1>Welcome to the Sample App</h1>
+  <h1><%= @boutique.name %> Profile</h1>
 
 
     <div class="container"> 
-      
-    <div class="col-md-8">                                   
-      <table class="table">
-        <thead>
-          <tr>
-            <th id="gravatar_image"><%= gravatar_for @boutique %></th>
-            <th><%= @boutique.name %> Profile</th>
-          </tr>
-        </thead>
-        <tbody>
+      <div class="row">
+  <div class="col-md-12">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @boutique %>
+
+      </h1>
+    </section>
+  </div>
+</div>
+
+<div class="sidebar">
+                <div class="fb-post" data-href="https://www.facebook.com/FacebookDevelopers/posts/10151471074398553" data-width="350"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/FacebookDevelopers/posts/10151471074398553"><p>Be the first to know when we release a new video by subscribing to our official Facebook Developers YouTube channel!  http://www.youtube.com/facebookdevelopers</p>Posted by <a href="https://www.facebook.com/FacebookDevelopers">Facebook Developers</a> on <a href="https://www.facebook.com/FacebookDevelopers/posts/10151471074398553">Wednesday, May 29, 2013</a></blockquote></div></div>
+     </div>
+<!--     <aside class="col-md-8">                             
+      <table class="profile_table"> -->
+
+<!--         <tbody>
           <tr>
             <td><strong>Name</strong></td>
             <td><%= @boutique.name %></td>
@@ -47,32 +55,7 @@
           <tr>
             <td>Description</td>
             <td><%= @boutique.description %></td>
-          </tr>                   
-
-          
-                      
-
-
-        </tbody>
-      </table>
-    </div>
-        <div class="col-md-4"> 
-      <br/>
-            <br/>
-                  <br/>
-                        <br/>
-                              <br/>
-                                    <br/>                                    
-                                          <br/>      <br/>      <br/>
-                                          <br/>      <br/>      <br/> <br/> <br/>                                         
-      <table class="table">
-        <thead>
-          <tr>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
+          </tr>   
           <tr>
             <td>Schedule</td>
             <td><%= @boutique.schedule %> </td>
@@ -94,14 +77,34 @@
           <tr>
             <td><a href = "<%= @boutique.instagram %>" target="_blank"> Check out our Instagram page!</a>
             </td>    
-          </tr>
-              <div class="fb-post" data-href="https://www.facebook.com/FacebookDevelopers/posts/10151471074398553" data-width="350"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/FacebookDevelopers/posts/10151471074398553"><p>Be the first to know when we release a new video by subscribing to our official Facebook Developers YouTube channel!  http://www.youtube.com/facebookdevelopers</p>Posted by <a href="https://www.facebook.com/FacebookDevelopers">Facebook Developers</a> on <a href="https://www.facebook.com/FacebookDevelopers/posts/10151471074398553">Wednesday, May 29, 2013</a></blockquote></div></div>
+          </tr>                
+
           
+                      
+
+
+        </tbody>
+      </table>
+    </div>
+        <div class="col-md-4"> 
+                                         
+      <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+
+     
 
         </tbody>
       </table>
     </div>
     </div>
+    <% provide(:name, @boutique.name) %>
+ -->
 <div>
 
 
