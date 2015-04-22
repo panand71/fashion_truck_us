@@ -3,8 +3,18 @@
 
 /* mixins, variables, etc. */
 
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
+  }
+
 $gray-medium-light: #eaeaea;
 
+.jumbotron {
+background-color: FFF7F;
+width: 90%;
+}
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;

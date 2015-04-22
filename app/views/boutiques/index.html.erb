@@ -15,7 +15,7 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
-
+ <%=select_tag 'State', options_for_select(us_states),:name=>"state",:id=>"state"%>
 <h1>Mobile Boutique Directory</h1>
 
 <% form_tag boutiques_path, :method => 'get' do %>
