@@ -13,6 +13,7 @@ class OwnersController < ApplicationController
     @owner = Owner.find(params[:id])
   end
 
+
   # GET /owners/new
   def new
     @owner = Owner.new
@@ -25,20 +26,28 @@ class OwnersController < ApplicationController
   # POST /owners
   # POST /owners.json
 
-  
   def create
     @owner = Owner.new(owner_params)
-
-    respond_to do |format|
-      if @owner.save
-        format.html { redirect_to @owner, notice: 'Owner was successfully created.' }
-        format.json { render :show, status: :created, location: @owner }
-      else
-        format.html { render :new }
-        format.json { render json: @owner.errors, status: :unprocessable_entity }
-      end
+    if @owner.save
+      flash[:success] = "Welcome to Fashion Truck US!"
+      redirect_to @owner
+    else
+      render 'new'
     end
   end
+  # def create
+  #   @owner = Owner.new(owner_params)
+
+  #   # respond_to do |format|
+  #     if @owner.save
+  #       format.html { redirect_to @owner, notice: 'Owner was successfully created.' }
+  #       format.json { render :show, status: :created, location: @owner }
+  #     else
+  #       format.html { render :new }
+  #       format.json { render json: @owner.errors, status: :unprocessable_entity }
+  #     end
+  #   # end
+  # end
 
   # PATCH/PUT /owners/1
   # PATCH/PUT /owners/1.json
@@ -72,7 +81,7 @@ class OwnersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def owner_params
-      params.require(:owner).permit(:name, :email, :phone, :username, :password_digest)
+      params.require(:owner).permit(:name, :email, :phone, :username, :password, :password_confirmation)
     end
 
     
